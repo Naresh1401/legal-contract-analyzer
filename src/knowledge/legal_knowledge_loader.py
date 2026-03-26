@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
@@ -202,7 +202,7 @@ Contract Provisions:
 
 def build_reference_documents() -> list:
     """Create LangChain documents from legal reference content."""
-    from langchain.schema import Document
+    from langchain_core.documents import Document
 
     documents = []
     for ref in LEGAL_REFERENCE_DOCS:
